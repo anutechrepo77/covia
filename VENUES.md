@@ -11,6 +11,8 @@ Two tiers:
 
 All three stable-tier venues run in a **single JVM** on one GCP host (multi-venue `venues` array config — see `deploy/gcp/README.md`), each with its own store and DID. Bootstrapped June 2026 from the latest snapshot build; from the next release onward they track the `:stable` image published from `master`.
 
+**Host:** GCP `asia-southeast1-b` (Singapore) · `e2-medium` (2 vCPU / 4 GB RAM) · Ubuntu 25.04 · static IP `35.213.147.8`
+
 ### venue-1.covia.ai (GCP)
 
 - **URL:** https://venue-1.covia.ai
@@ -18,7 +20,9 @@ All three stable-tier venues run in a **single JVM** on one GCP host (multi-venu
 - **MCP:** https://venue-1.covia.ai/mcp
 - **Swagger:** https://venue-1.covia.ai/swagger
 - **DID:** https://venue-1.covia.ai/.well-known/did.json
-- **TLS:** Let's Encrypt (auto-renew)
+- **Region:** GCP asia-southeast1 (Singapore)
+- **Spec:** 2 vCPU, 4 GB RAM (shared host — see above)
+- **TLS:** Let's Encrypt (auto-renew via Caddy)
 
 ### venue-2.covia.ai (GCP)
 
@@ -27,13 +31,20 @@ All three stable-tier venues run in a **single JVM** on one GCP host (multi-venu
 - **MCP:** https://venue-2.covia.ai/mcp
 - **Swagger:** https://venue-2.covia.ai/swagger
 - **DID:** https://venue-2.covia.ai/.well-known/did.json
-- **TLS:** Let's Encrypt (auto-renew)
+- **Region:** GCP asia-southeast1 (Singapore)
+- **Spec:** 2 vCPU, 4 GB RAM (shared host — see above)
+- **TLS:** Let's Encrypt (auto-renew via Caddy)
 
 ### venue-test.covia.ai (GCP)
 
 - **URL:** https://venue-test.covia.ai
 - **Status:** https://venue-test.covia.ai/api/v1/status
 - **MCP:** https://venue-test.covia.ai/mcp
+- **Swagger:** https://venue-test.covia.ai/swagger
+- **DID:** https://venue-test.covia.ai/.well-known/did.json
+- **Region:** GCP asia-southeast1 (Singapore)
+- **Spec:** 2 vCPU, 4 GB RAM (shared host — see above)
+- **TLS:** Let's Encrypt (auto-renew via Caddy)
 - **Purpose:** scratch venue for experiments — same build as venue-1/-2, but make no assumptions about data longevity
 
 The trio gives a stable federation set for cross-venue work on one host (`35.213.147.8`).
@@ -47,7 +58,7 @@ The trio gives a stable federation set for cross-venue work on one host (`35.213
 - **MCP:** https://venue-3.covia.ai/mcp
 - **Swagger:** https://venue-3.covia.ai/swagger
 - **DID:** https://venue-3.covia.ai/.well-known/did.json
-- **Region:** AWS us-east-1 (N. Virginia)
+- **Region:** AWS ap-southeast-1 (Singapore)
 - **Spec:** 2 vCPU, 4 GB RAM
 - **TLS:** Let's Encrypt (auto-renew)
 
